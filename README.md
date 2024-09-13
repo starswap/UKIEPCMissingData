@@ -20,5 +20,9 @@ This repo will provide the missing solutions and data.
 | 2022 | Keeping Time    |          |           |            |
 | 2022 | Lasso Tool      |          |           |            |
 
+# Notes
+## Alpine Pass
+Sample 1 had a typo in the original contest printout. This is corrected here and in the OJ version.
+
 # Acknowledgements
 Credits for the original problems and sample data are to Robin Lee and the UKIEPC Team.
