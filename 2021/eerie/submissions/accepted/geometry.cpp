@@ -46,6 +46,10 @@ bool areParallel(line l1, line l2) {             // check a & b
   return (fabs(l1.a-l2.a) < EPS) && (fabs(l1.b-l2.b) < EPS);
 }
 
+bool areSame(line l1, line l2) {                 // also check  c
+  return areParallel(l1 ,l2) && (fabs(l1.c-l2.c) < EPS);
+}
+
 // returns true (+ intersection point p) if two lines are intersect
 bool findIntersect(line l1, line l2, point &p) {
   if (areParallel(l1, l2)) return false;         // no intersection
@@ -113,6 +117,8 @@ int main() {
         area -= 0.5 * p.y * (L + p.x);
         assert (findIntersect(midl, start, p));
         area += 0.5 * p.y * (L + p.x);
+
+        if (areSame(rstart, end)) continue;
 
         // remove double counted "half intersection"
         assert (findIntersect(end, rstart, p));
