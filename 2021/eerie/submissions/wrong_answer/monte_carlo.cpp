@@ -6,21 +6,7 @@
 using namespace std;
 
 /* Monte Carlo simulation with an average relative error of
- about 4x10^-5 as tested by:
-
-import subprocess
-
-N = 10
-total_err = 0
-for i in range(N):
-    result = float(subprocess.check_output("cat E.in2.txt | b.exe", shell=True).strip())
-    error = abs(result - 32.7) / 32.7
-    total_err += error
-    print(error)
-
-print(f"AVG: {total_err / N}")
-
-*/
+ about 4x10^-5 on the samples */
 
 std::random_device rd;
 std::mt19937_64 gen(rd());
@@ -42,8 +28,8 @@ double rand_range(double l, double u) {
 }
 
 const int TOTAL_POINTS = 120000000;
-const int MAX_N = 1000;
-bool in_pillar[MAX_N];
+const int MAX_H = 10000;
+bool in_pillar[MAX_H];
 
 int main() {
     cin.tie(0)->sync_with_stdio(0);
@@ -57,6 +43,7 @@ int main() {
         cin >> s >> e;
         while (i < s) in_pillar[i++] = false;
         while (i < e) in_pillar[i++] = true;
+        in_pillar[e] = false;
     }
 
     // Source: (-L, 0)
@@ -73,7 +60,7 @@ int main() {
         for (int i = 0; i < 2; ++i, w = 2 * W - w) {
             double cross = (h) / (w + L) * L;
             int below = floor(cross);
-            in |= in_pillar[below];
+            if (below < MAX_H) in |= in_pillar[below];
         }
         in_shadow += in;
     }
