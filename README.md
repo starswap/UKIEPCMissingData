@@ -7,7 +7,7 @@ This repo will provide the missing solutions and data.
 |------|-----------------|----------|-----------|------------|
 | 2021 | Eerie Shadows   |   ✅    |    ✅     |            |
 | 2021 | Getting Square  |          |           |            |
-| 2022 | Alpine Pass     |          |           |            |
+| 2022 | Alpine Pass     |   ✅    |   ✅      |            |
 | 2022 | Boulder Wall    |          |           |            |
 | 2022 | Colour Wheel    |          |           |            |
 | 2022 | Duck Crossing   |          |           |            |
