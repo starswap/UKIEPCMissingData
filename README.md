@@ -5,7 +5,7 @@ This repo will provide the missing solutions and data.
 
 | Year | Problem         | Solution | Test Data | Codeforces |
 |------|-----------------|----------|-----------|------------|
-| 2021 | Eerie Shadows   |   ✅    |    ✅     |            |
+| 2021 | Eerie Shadows   |   ✅    |    ✅     | [Here](https://codeforces.com/contestInvitation/beaa072cd2177accdd666a12cd7907d08148b71e) |
 | 2021 | Getting Square  |          |           |            |
 | 2022 | Alpine Pass     |   ✅    |   ✅      |            |
 | 2022 | Boulder Wall    |          |           |            |
