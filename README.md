@@ -22,7 +22,8 @@ This repo will provide the missing solutions and data.
 
 # Notes
 ## Alpine Pass
-Sample 1 had a typo in the original contest printout. This is corrected here and in the OJ version.
+- Sample 1 had a typo in the original contest printout. This is corrected here and in the OJ version.
+- Though not explicitly stated in the problem, we assume that the points in the polygons are to be provided "in order" so that adjacent vertices are to be connected by edges. This makes sense because otherwise the shape in question would be ambiguous. However, we make no assumption about the order in which the points are specified (clockwise / anticlockwise) and include test cases in both directions.
 
 # Acknowledgements
 Credits for the original problems and sample data are to Robin Lee and the UKIEPC Team.
