@@ -20,15 +20,15 @@ This repo will provide the missing solutions and data.
 | 2022 | Keeping Time    |          |           |            |
 | 2022 | Lasso Tool      |          |           |            |
 
-# Notes
-## Alpine Pass
+## Notes
+### Alpine Pass
 - Sample 1 had a typo in the original contest printout. This is corrected here and in the OJ version.
 - Though not explicitly stated in the problem, we assume that the points in the polygons are to be provided "in order" so that adjacent vertices are to be connected by edges. This makes sense because otherwise the shape in question would be ambiguous. However, we make no assumption about the order in which the points are specified (clockwise / anticlockwise) and include test cases in both directions.
 
 
-# Contributing
+## Contributing
 I'd be keen to know if you find an error in the data or my judge solution or an edge case which is not being tested. Please file an issue : ). After submitting code to the OJ editions of the problems if you get an unexpected verdict download this data and check the test cases manually to make sure it's not a mistake on my part.
 
 
-# Acknowledgements
+## Acknowledgements
 Credits for the original problems and sample data are to Robin Lee and the UKIEPC Team.
