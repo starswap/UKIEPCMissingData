@@ -159,14 +159,14 @@ bool segIntersect(point p, point q, point r, point s, point &i) {
     const line l1(p, q);
     const line l2(r, s);
 
-    bool same_case = areSame(l1, l2) && ((p.x < r.x + EPS && r.x < q.x + EPS) || 
-                                         (q.x < r.x + EPS && r.x < p.x + EPS) || 
-                                         (p.x < s.x + EPS && s.x < q.x + EPS) || 
-                                         (q.x < s.x + EPS && s.x < p.x + EPS) ||
-                                         (s.x < p.x + EPS && p.x < r.x + EPS) || 
-                                         (r.x < p.x + EPS && p.x < s.x + EPS) ||
-                                         (s.x < q.x + EPS && q.x < r.x + EPS) || 
-                                         (r.x < q.x + EPS && q.x < s.x + EPS));
+    bool same_case = areSame(l1, l2) && ((p.x < r.x + EPS && r.x < q.x + EPS && p.y < r.y + EPS && r.y < q.y + EPS) || 
+                                         (q.x < r.x + EPS && r.x < p.x + EPS && q.y < r.y + EPS && r.y < p.y + EPS) || 
+                                         (p.x < s.x + EPS && s.x < q.x + EPS && p.y < s.y + EPS && s.y < q.y + EPS) || 
+                                         (q.x < s.x + EPS && s.x < p.x + EPS && q.y < s.y + EPS && s.y < p.y + EPS) ||
+                                         (s.x < p.x + EPS && p.x < r.x + EPS && s.y < p.y + EPS && p.y < r.y + EPS) || 
+                                         (r.x < p.x + EPS && p.x < s.x + EPS && r.y < p.y + EPS && p.y < s.y + EPS) ||
+                                         (s.x < q.x + EPS && q.x < r.x + EPS && s.y < q.y + EPS && q.y < r.y + EPS) || 
+                                         (r.x < q.x + EPS && q.x < s.x + EPS && r.y < q.y + EPS && q.y < s.y + EPS));
     if (same_case) {
         vector<point> pts{p, q, r, s};
         sort(pts.begin(), pts.end());
@@ -234,7 +234,8 @@ int main(int argc, char *argv[]) {
             for (int k = 0; k < poly1.size() - 1; ++k) {
                 for (int l = 0; l < poly2.size() - 1; ++l) {
                     point p;
-                    ensuref(!segIntersect(poly1[k], poly1[k + 1], poly2[l + 1], poly2[l + 1], p), "Contours intersect");
+                    bool intsct = segIntersect(poly1[k], poly1[k + 1], poly2[l], poly2[l + 1], p);
+                    ensuref(!intsct, format("Contours {} and {} intersect at lines {} {}", i, j, k, l).c_str());
                 }
             }
         
