@@ -185,16 +185,16 @@ int main(int argc, char *argv[]) {
     registerValidation(argc, argv);
     point A, B;
 
-    A.x = inf.readInt(-1'000'000, 1'000'000, "ax");
+    A.x = inf.readInt(-999'999, 999'999, "ax");
     inf.readSpace();
-    A.y = inf.readInt(-1'000'000, 1'000'000, "ay");
+    A.y = inf.readInt(-999'999, 999'999, "ay");
     inf.readEoln();
-    B.x = inf.readInt(-1'000'000, 1'000'000, "bx");
+    B.x = inf.readInt(-999'999, 999'999, "bx");
     inf.readSpace();
-    B.y = inf.readInt(-1'000'000, 1'000'000, "by");
+    B.y = inf.readInt(-999'999, 999'999, "by");
     inf.readEoln();
     
-    int n = inf.readInt(1, 10'000, "n");
+    int n = inf.readInt(1, 10'000, "n~"); // Bounds warnings suppressed because of 10000 total vertex limit
     inf.readEoln();
 
     
